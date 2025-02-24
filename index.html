@@ -7,7 +7,45 @@
 
     <link rel="stylesheet" href="reset-modern.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <dialog open>
+      <div class="choice-container">
+        <h2>Choose Your Mark</h2>
+        <div class="choices">
+          <button class="choice-x">X</button>
+          <button class="choice-o">O</button>
+        </div>
+      </div>
+    </dialog>
+    <div class="container">
+      <div class="Round">
+        <div class="round-of">Round Of :</div>
+        <div class="XO">
+          <div class="O">O</div>
+          <div class="X">X</div>
+        </div>
+      </div>
+      <div class="Board">
+        <div class="grid">
+          <div class="col1">
+            <div class="cell1" data-cell></div>
+            <div class="cell2" data-cell></div>
+            <div class="cell3" data-cell></div>
+          </div>
+          <div class="col2">
+            <div class="cell1" data-cell></div>
+            <div class="cell2" data-cell></div>
+            <div class="cell3" data-cell></div>
+          </div>
+          <div class="col3">
+            <div class="cell1" data-cell></div>
+            <div class="cell2" data-cell></div>
+            <div class="cell3" data-cell></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
