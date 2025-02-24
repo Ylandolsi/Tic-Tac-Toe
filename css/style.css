@@ -87,21 +87,17 @@ body.dialog-open {
 #choice-dialog {
     pointer-events: auto; 
     z-index: 1000; 
-    /* background: white; */
 }
 
 #choice-dialog {
+    position: relative;
     border: none;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto auto;
+    
     background-color: #ffffff;
     color: white;
 }
