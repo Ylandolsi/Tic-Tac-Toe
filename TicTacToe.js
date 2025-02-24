@@ -23,6 +23,8 @@ class TicTacToe {
         for (let i = 0; i < 3; i++) {
             if (this.checkRow(xo, this.gameBoard[i])) return true;
             if (this.checkCol(xo, i)) return true;
+            if (this.gameBoard[0][0] === xo && this.gameBoard[1][1] === xo && this.gameBoard[2][2] === xo) return true;
+            if (this.gameBoard[0][2] === xo && this.gameBoard[1][1] === xo && this.gameBoard[2][0] === xo) return true;
         }
         return false;
     }
@@ -46,25 +48,19 @@ class TicTacToe {
         this.current = this.current === this.player1 ? this.player2 : this.player1;
         return true;
     }
-    
-    start() {
-        while (!this.hasWon && !this.endGame()) {
-            let row = parseInt(prompt(`${this.current} please choose your row (0-2)`));
-            let col = parseInt(prompt(`${this.current} please choose your col (0-2)`));
-            if (!this.makeMove(row, col)) {
-                console.log("Invalid move, try again.");
-            }
-        }
-        if (!this.hasWon) {
-            console.log("Game ended in a draw.");
-        }
+    finish() {
+        this.gameBoard = [
+            ['','',''],
+            ['','',''],
+            ['','','']
+        ];
+        this.current = this.player1;
+        this.hasWon = false;
+
     }
+    
+
 }
 
-let player1 = prompt("please choose your symbol: X or O");
-while (player1 !== 'X' && player1 !== 'O') {
-    player1 = prompt("please choose your symbol: X or O");
-}
-const player2 = player1 === 'X' ? 'O' : 'X'; 
-const game = new TicTacToe(player1, player2);
-game.start();
+
+export { TicTacToe };

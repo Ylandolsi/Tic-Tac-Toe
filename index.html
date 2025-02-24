@@ -7,10 +7,12 @@
 
     <link rel="stylesheet" href="reset-modern.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src".TicTacToe.js"></script>
     <script type="module" src="script.js" defer></script>
+    <link rel="shortcut icon" href="images/tic-tac-toe.png" type="image/x-icon">
   </head>
   <body>
-    <dialog open>
+    <dialog id="choice-dialog">
       <div class="choice-container">
         <h2>Choose Your Mark</h2>
         <div class="choices">
@@ -23,29 +25,32 @@
       <div class="Round">
         <div class="round-of">Round Of :</div>
         <div class="XO">
-          <div class="O">O</div>
+          <div class="O selected">O</div>
           <div class="X">X</div>
         </div>
       </div>
       <div class="Board">
         <div class="grid">
           <div class="col1">
-            <div class="cell1" data-cell></div>
-            <div class="cell2" data-cell></div>
-            <div class="cell3" data-cell></div>
+            <div class="cell1" data-row ="1" data-col="1" ></div>
+            <div class="cell2" data-row ="2" data-col="1" ></div>
+            <div class="cell3" data-row = "3" data-col="1"  ></div>
           </div>
           <div class="col2">
-            <div class="cell1" data-cell></div>
-            <div class="cell2" data-cell></div>
-            <div class="cell3" data-cell></div>
+            <div class="cell1" data-row ="1" data-col="2"></div>
+            <div class="cell2" data-row ="2" data-col="2"></div>
+            <div class="cell3" data-row ="3" data-col="2"></div>
           </div>
           <div class="col3">
-            <div class="cell1" data-cell></div>
-            <div class="cell2" data-cell></div>
-            <div class="cell3" data-cell></div>
+            <div class="cell1" data-row ="1" data-col="3"></div>
+            <div class="cell2" data-row ="2" data-col="3"></div>
+            <div class="cell3" data-row ="3" data-col="3"></div>
           </div>
         </div>
       </div>
+      <div class="status">
+        <div class="status-text"></div>
+        <button class="reset">Reset</button>
     </div>
   </body>
 </html>

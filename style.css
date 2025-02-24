@@ -29,18 +29,23 @@ body{
     align-items: center;
     gap: 10px;
 }
+
 .X {
-    background-color: #3093d4;
     padding: 5px 10px;
     border-radius: 5px;
-    box-shadow: 0 0 5px 0 #3093d4
-
+    background-color: #3d3e3f;
+    box-shadow: 0 0 5px 0 #808080
 }
 .O{
     background-color: #3d3e3f;
     padding: 5px 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 #808080
+}
+.selected{
+    box-shadow: 0 0 5px 0 #3093d4; 
+    background-color: #3093d4;
+
 }
 
 
@@ -72,26 +77,64 @@ body{
     background-color: #333333;
 }
 
-dialog {
-    position: fixed;
-    top: 50%;
-    width: 400px;
-    height: 200px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+body.dialog-open {
+    filter: blur(5px); 
+    pointer-events: none; 
+}
+
+
+#choice-dialog {
+    pointer-events: auto; 
+    z-index: 1000; 
+    /* background: white; */
+}
+
+#choice-dialog {
     border: none;
     border-radius: 10px;
-    gap: 50px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: white;
+}
+#choice-dialog  h2{
+    color: #222222;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.choice-x, .choice-o {
+    padding: 10px 20px;
     background-color: #DEC8A3;
-    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 #808080;
+}
+.status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.status button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #3d3e3f;
+    box-shadow: 0 0 5px 0 #808080;
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 #DEC8A3;
+    cursor: pointer;
+    border: none;
 }
-::backdrop { 
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(3px);
-    opacity: 0.75;
+.reset:hover{
+    background-color: #dd5a5a;
+    box-shadow: 0 0 5px 0 #ffffff;
 }
